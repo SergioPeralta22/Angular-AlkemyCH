@@ -1,0 +1,10 @@
+<!-- TODO reestructurar con directivas estructurales y estilos condicionales -->
+
+<h3>Nombre:{{dish?.title}}</h3>
+<p>Puntaje Saludable:{{dish?.healthScore}}</p>
+<p>Tiempo de Preparacion {{dish?.preparationMinutes  }} </p>
+<p>Precio {{dish?.pricePerServing}}</p>
+<p>Description {{dish?.summary}}</p>
+
+<button (click)="deleteDish()">Eliminar</button>
+<button (click)="addToMenu()">Agregar al menu</button>
