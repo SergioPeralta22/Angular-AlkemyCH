@@ -1,0 +1,35 @@
+.buscador h5 {
+  margin-left: 30px;
+  margin-top: 40px;
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: bold;
+  position: relative;
+}
+
+.buscador h5::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 90px;
+  height: 4px;
+  background-color: #efa13f;
+}
+
+.buscador img {
+  display: inline-block;
+}
+
+.buscador input {
+  width: 50%;
+  background-color: #1b1a1a;
+  border: none;
+  height: 3rem;
+  margin-left: 30px;
+  color: #efa13f;
+}
+
+.buscador input:hover {
+  border-bottom: 5px solid #efa13f;
+}

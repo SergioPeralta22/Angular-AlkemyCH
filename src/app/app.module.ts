@@ -1,28 +1,33 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { DishListComponent } from './components/dish-list/dish-list.component';
-import { DishComponent } from './components/dish/dish.component';
 import { LoginComponent } from './pages/login/login.component';
+import { SpinnerModule } from './components/spinner/spinner.module';
+import { SearchbarModule } from './components/searchbar/searchbar.module';
+import { DishModule } from './components/dish/dish.module';
+import { DishListModule } from './components/dish-list/dish-list.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     NavbarComponent,
-    DishListComponent,
-    DishComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SpinnerModule,
+    SearchbarModule,
+    DishModule,
+    DishListModule,
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
