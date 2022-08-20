@@ -1,13 +1,29 @@
 <h5>Buscar Platillo</h5>
 <div class="row">
-  <div class="col">
-    <form (ngSubmit)="search()" autocomplete="off">
-      <input type="text" class="form-control" placeholder="Buscar Platillo..." name="term" [(ngModel)]="term">
-    </form>
+  <div class="col-11">
+    <input type="text" #recipeSearchInput class="form-control" placeholder="Buscar Platillo..." name="term"
+      [(ngModel)]="term" (keyup)="search()">
   </div>
 </div>
 <hr>
 
 <div class="alert alert-danger">
   <strong>Error!</strong> No se encontraron platillos.
+</div>
+
+
+<div class="row mt-3" style="margin-left: 2%;">
+  <h3>worjçking</h3>
+  <div class="col-3 mt-3 col-xs col-sm col-md col-lg-4" *ngFor="let dish of showDishes">
+    <div class="card border-primary mb-3" style="max-width: 20rem;">
+      <div class="card-body">
+        <h6 class="card-title" style="text-align: center; font-weight:bold;">{{dish.title}}</h6>
+        <p class="card-text"></p>
+        <img src="{{dish.image}}" alt="" width="80%" style="margin-left: 10%;">
+        <br>
+        <button class="btn btn-secondary" style="margin-left: 30%; margin-top: 5%;" (click)='details(dish.id)'>Ver
+          detalles</button>
+      </div>
+    </div>
+  </div>
 </div>

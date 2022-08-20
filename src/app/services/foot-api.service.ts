@@ -17,7 +17,7 @@ export class FootAPIService {
   getRecipes(query: string): Observable<IDish[]> {
     return this.http
       .get<IApiResponse>(
-        `${this.apiUrl}recipes/complexSearch?apiKey=${this.apiKey}&query=${query}&addRecipeInformation=true&addRecipeNutrition=true`
+        `${this.apiUrl}recipes/complexSearch?query=${query}&apiKey=${this.apiKey}&addRecipeInformation=true`
       )
       .pipe(
         map((response) => {
