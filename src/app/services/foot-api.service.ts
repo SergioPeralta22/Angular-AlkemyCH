@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
+import { IApiResponse } from '../models/interfaces/apiResponse.interface';
+import { IDish } from '../models/interfaces/Dish.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -12,10 +14,16 @@ export class FootAPIService {
 
   constructor(private http: HttpClient) {}
 
-  getRecipes(query: string): Observable<any> {
-    return this.http.get(
-      `${this.apiUrl}recipes/complexSearch?apiKey=${this.apiKey}&query=${query}&addRecipeInformation=true&addRecipeNutrition=true`
-    );
+  getRecipes(query: string): Observable<IDish[]> {
+    return this.http
+      .get<IApiResponse>(
+        `${this.apiUrl}recipes/complexSearch?apiKey=${this.apiKey}&query=${query}&addRecipeInformation=true&addRecipeNutrition=true`
+      )
+      .pipe(
+        map((response) => {
+          return response.results;
+        })
+      );
   }
 
   getVeganRecipes() {
