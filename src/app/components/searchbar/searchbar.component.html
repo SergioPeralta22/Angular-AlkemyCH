@@ -1,7 +1,13 @@
 <h5>Buscar Platillo</h5>
-<form action="" autocomplete="off">
-  <div class="form-group">
-    <input type="text" class="form-control" name="term" placeholder="Buscar platillo">
+<div class="row">
+  <div class="col">
+    <form (ngSubmit)="search()" autocomplete="off">
+      <input type="text" class="form-control" placeholder="Buscar Platillo..." name="term" [(ngModel)]="term">
+    </form>
   </div>
-  <button type="submit" class="btn btn-primary">Buscar</button>
-</form>
+</div>
+<hr>
+
+<div class="alert alert-danger">
+  <strong>Error!</strong> No se encontraron platillos.
+</div>

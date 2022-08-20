@@ -10,6 +10,7 @@ import { SpinnerModule } from './components/spinner/spinner.module';
 import { SearchbarModule } from './components/searchbar/searchbar.module';
 import { DishModule } from './components/dish/dish.module';
 import { DishListModule } from './components/dish-list/dish-list.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { DishListModule } from './components/dish-list/dish-list.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     SpinnerModule,
     SearchbarModule,
     DishModule,
